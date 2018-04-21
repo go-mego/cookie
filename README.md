@@ -52,14 +52,14 @@ func main() {
 
 ## 設置 Cookie
 
-透過 `Set` 與 `&cookie.Cookie` 來在客戶端設置一個新的 Cookie 名稱與內容。
+透過 `Set` 與 `&cookie.Options` 來在客戶端設置一個新的 Cookie 名稱與內容。
 
 ```go
 func main() {
 	m := mego.New()
 	m.GET("/set", cookie.New(), func(j *cookie.Jar) {
 		// 設置一個名為 `myCookie` 的 Cookie 至客戶端瀏覽器。
-		j.Set(&cookie.Cookie{
+		j.Set(&cookie.Options{
 			Key:   "myCookie",
 			Value: "我要開動了！",
 			// ...
