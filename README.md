@@ -42,7 +42,7 @@ Cookie 也能夠在單一路由中使用。
 ```go
 func main() {
 	m := mego.New()
-	//
+	// Cookie 中介軟體也能夠傳入單一路由，而不是當作全域中介軟體。
 	m.GET("/set", cookie.New(), func(j *cookie.Jar) {
 		// ...
 	})
